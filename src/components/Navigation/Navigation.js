@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box, Button, Header } from 'grommet';
+import { Home, User, Launch, Briefcase, Moon, Sun } from 'grommet-icons';
+
 import { BoxBackground } from '../../color';
 const Navigation = ({ darkMode, setDarkMode }) => {
   return (
@@ -10,13 +12,37 @@ const Navigation = ({ darkMode, setDarkMode }) => {
       background={{ ...BoxBackground }}
     >
       <Header>
-        <Button secondary href="#home" label='Home' hoverIndicator />
-        <Button secondary href="#aboutMe" label='About Me' hoverIndicator />
-        <Button secondary href="#skills" label='Skills' hoverIndicator />
-        <Button secondary href="#experience" label='Experience' hoverIndicator />
         <Button
           secondary
-          label={darkMode ? 'Light' : 'Dark'}
+          href='#home'
+          icon={<Home color={{ light: 'black', dark: 'white' }} />}
+          color={{ light: 'black', dark: 'white' }}
+          hoverIndicator
+        />
+        <Button
+          secondary
+          href='#aboutMe'
+          icon={<User color={{ light: 'black', dark: 'white' }} />}
+          color={{ light: 'black', dark: 'white' }}
+          hoverIndicator
+        />
+        <Button
+          secondary
+          href='#skills'
+          icon={<Launch color={{ light: 'black', dark: 'white' }} />}
+          hoverIndicator
+        />
+        <Button
+          secondary
+          href='#experience'
+          icon={<Briefcase color={{ light: 'black', dark: 'white' }} />}
+          color={{ light: 'black', dark: 'white' }}
+          hoverIndicator
+        />
+        <Button
+          secondary
+          icon={darkMode ? <Moon color={{ light: 'black', dark: 'white' }} /> : <Sun color={{ light: 'black', dark: 'white' }} />}
+          color={{ light: 'black', dark: 'white' }}
           onClick={() => setDarkMode(!darkMode)}
           hoverIndicator
         />

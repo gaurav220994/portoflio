@@ -3,7 +3,7 @@ import { Box, Image } from 'grommet';
 const Banner = ({ darkMode, setDarkMode }) => {
   return (
     <Box id="home" height='large'>
-      <Image fit='cover' src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
+      <Image fit='cover' src='JavaScript.jpeg' />
     </Box>
   );
 };
