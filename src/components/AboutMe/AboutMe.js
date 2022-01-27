@@ -13,7 +13,7 @@ import { Favorite, ShareOption } from 'grommet-icons';
 
 const AboutMe = ({ darkMode, setDarkMode }) => {
   return (
-    <Box direction='row' pad='medium'>
+    <Box id="aboutMe" direction='row' pad='medium'>
       <Box pad='small' align='center' width='50%'>
         <Card height='small' width='small'>
           <CardHeader pad='medium'>Header</CardHeader>

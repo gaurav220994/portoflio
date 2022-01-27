@@ -1,31 +1,22 @@
 import React, { useState } from 'react';
-import {
-  Main,
-  Box,
-  Button,
-  Grommet,
-  Heading,
-  Text,
-  Paragraph,
-  TextInput,
-  Image,
-  Stack,
-  Diagram,
-  InfiniteScroll,
-  Header,
-  ResponsiveContext,
-} from 'grommet';
+import { Main, Grommet, Footer, Text, Box } from 'grommet';
 import { Navigation, Banner, AboutMe, Skills, Experience } from './components';
-import { Search, Menu } from 'grommet-icons';
 import { theme } from './theme';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const val = localStorage.getItem('darkMode') === 'true';
+  const [darkMode, setDarkMode] = useState(val);
+
+  const updateDarkMode = () => {
+    localStorage.setItem('darkMode', !darkMode);
+    setDarkMode(!darkMode);
+  };
+
   return (
     <Grommet theme={theme} themeMode={darkMode ? 'dark' : 'light'} full>
       <Main as='main' fill='horizontal' flex='grow' overflow='auto'>
         {/* Navigation */}
-        <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Navigation darkMode={darkMode} setDarkMode={updateDarkMode} />
 
         {/* Banner */}
         <Banner />
@@ -38,8 +29,17 @@ const App = () => {
 
         {/* Experience */}
         <Experience />
-
-        
+        <Footer
+          align='center'
+          style={{ position: 'fixed', bottom: 0, width: '100%' }}
+          background={{
+            dark: '#111111',
+            light: '#FFFFFF',
+          }}
+          pad='small'
+        >
+          <Text margin={{ left: '50%' }}>Copyright</Text>
+        </Footer>
       </Main>
     </Grommet>
   );

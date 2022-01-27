@@ -84,7 +84,7 @@ const Experience = () => {
   }
 
   return (
-    <Box align='center' pad='large'>
+    <Box align='center' pad='large' id="experience">
       <Stack>
         <Box direction='column' gap='xlarge'>
           {[1, 2, 3].map((id) => (

@@ -10,10 +10,10 @@ const Navigation = ({ darkMode, setDarkMode }) => {
       background={{ ...BoxBackground }}
     >
       <Header>
-        <Button secondary label='Home' hoverIndicator />
-        <Button secondary label='About Me' hoverIndicator />
-        <Button secondary label='Skills' hoverIndicator />
-        <Button secondary label='Experience' hoverIndicator />
+        <Button secondary href="#home" label='Home' hoverIndicator />
+        <Button secondary href="#aboutMe" label='About Me' hoverIndicator />
+        <Button secondary href="#skills" label='Skills' hoverIndicator />
+        <Button secondary href="#experience" label='Experience' hoverIndicator />
         <Button
           secondary
           label={darkMode ? 'Light' : 'Dark'}
