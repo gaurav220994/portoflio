@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 
 import { Box, Diagram, Stack, Text, Heading } from 'grommet';
-import { Code } from 'grommet-icons';
+import { Code,StatusGoodSmall } from 'grommet-icons';
 
 const data = [
   {
@@ -31,7 +31,7 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   toTarget,
   anchor: 'vertical',
   color: { light: 'accent-4', dark: 'neutral-4' },
-  thickness: 'xsmall',
+  thickness: 'xxsmall',
   round: true,
   type: 'curved',
   ...rest,
@@ -45,10 +45,10 @@ const DiamondContainer = ({ from, to, designation, align, id, name }) => (
     gap='medium'
     key={id}
   >
-    <Code
+    <StatusGoodSmall
       id={id}
-      size='xlarge'
-      color={{ light: `accent-${id}`, dark: `neutral-${id}` }}
+      size='small'
+      color={{ light: `dark-${id}`, dark: `light-${id}` }}
     />
     <Box align={'left'}>
       <Text
@@ -104,7 +104,7 @@ const Experience = () => {
 
   return (
     <Box align='center' pad='large' id='experience'>
-      <Heading pad='large'>Experience</Heading>
+      <Heading size={'xlarge'} pad='large'>Experience</Heading>
       <Stack>
         <Box direction='column' gap='xlarge'>
           {[1, 2, 3].map((id) => (
@@ -112,7 +112,7 @@ const Experience = () => {
           ))}
         </Box>
         <Diagram
-          animation={{ type: 'draw', duration: 3000, size: 'xlarge' }}
+          animation={{ type: 'draw', duration: 3000, size: 'small' }}
           connections={connections}
         />
       </Stack>

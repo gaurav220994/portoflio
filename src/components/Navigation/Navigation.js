@@ -8,7 +8,7 @@ const Navigation = ({ darkMode, setDarkMode }) => {
     <Box
       align='center'
       pad='medium'
-      style={{ position: 'fixed', width: '100%' }}
+      style={{ position: 'fixed', width: '100%',zIndex:999 }}
       background={{ ...BoxBackground }}
     >
       <Header>

@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Main, Grommet, Footer, Text, Box } from 'grommet';
-import { Navigation, Banner, AboutMe, Skills, Experience } from './components';
+import {
+  AboutMe,
+  Banner,
+  Certifications,
+  Experience,
+  Navigation,
+  Recognition,
+  Skills,
+} from './components';
 import { theme } from './theme';
 
 const App = () => {
@@ -27,11 +35,19 @@ const App = () => {
         {/* About Me */}
         <Skills />
 
+        {/* Recognition */}
+        <Recognition />
+        
         {/* Experience */}
         <Experience />
+
+
+        {/* Certifications */}
+        <Certifications  />
+
         <Footer
           align='center'
-          style={{ position: 'fixed', bottom: 0, width: '100%' }}
+          // style={{ position: 'fixed', bottom: 0, width: '100%' }}
           background={{
             dark: '#111111',
             light: '#FFFFFF',
