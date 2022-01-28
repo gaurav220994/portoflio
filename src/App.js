@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Main, Grommet, Footer, Text, Box } from 'grommet';
 import {
   AboutMe,
@@ -10,7 +10,7 @@ import {
   Skills,
 } from './components';
 import { theme } from './theme';
-
+import ReactGa from 'react-ga';
 const App = () => {
   const val = localStorage.getItem('darkMode') === 'true';
   const [darkMode, setDarkMode] = useState(val);
@@ -19,6 +19,11 @@ const App = () => {
     localStorage.setItem('darkMode', !darkMode);
     setDarkMode(!darkMode);
   };
+
+  useEffect(()=>{
+    ReactGa.initialize('G-4M83CX78ZD',{ debug: true });
+    ReactGa.pageview('/')
+  },[])
 
   return (
     <Grommet theme={theme} themeMode={darkMode ? 'dark' : 'light'} full>
