@@ -8,28 +8,25 @@ const Recognition = ({ darkMode }) => {
   const awards = useMemo(
     () => [
       {
-        name: 'Award Name',
-        company: 'Company Name',
+        name: '3 Cheers Award',
+        company: 'Successive Technology',
       },
       {
-        name: 'Award Name',
-        company: 'Company Name',
+        name: 'Distinguished Contributer (2018)',
+        company: 'Harbinger Group',
       },
       {
-        name: 'Award Name',
-        company: 'Company Name',
+        name: 'Distinguished Contributer (2019)',
+        company: 'Harbinger Group',
       },
-      {
-        name: 'Award Name',
-        company: 'Company Name',
-      },
-      
     ],
     [],
   );
   return (
     <>
-      <Heading size={'xlarge'} alignSelf='center'>{'Recognition'}</Heading>
+      <Heading size={'xlarge'} alignSelf='center'>
+        {'Recognition'}
+      </Heading>
       <Box
         id='recognition'
         direction='row'
@@ -40,10 +37,17 @@ const Recognition = ({ darkMode }) => {
         wrap={true}
       >
         {awards.map((el) => (
-          <Box direction='column' gap='medium' align='center' pad={{bottom:'10px'}}>
-            <Heading>{el.name}</Heading>
-            <Achievement size='large' />
-            <Text>{el.company}</Text>
+          <Box
+            direction='column'
+            gap='medium'
+            align='center'
+            pad={{ bottom: '10px' }}
+          >
+            <Heading color={{ dark: 'dark-6', light: 'dark-2' }}>
+              {el.name}
+            </Heading>
+            <Achievement color='accent-4' size='large' />
+            <Text weight='bold'>{el.company}</Text>
           </Box>
         ))}
       </Box>

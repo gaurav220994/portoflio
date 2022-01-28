@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Box,
   Card,
-  CardHeader,
+  Image,
   CardBody,
   CardFooter,
   Button,
@@ -15,16 +15,17 @@ const AboutMe = ({ darkMode, setDarkMode }) => {
   return (
     <Box id="aboutMe" direction='row' pad='medium'>
       <Box pad='small' align='center' width='50%'>
-        <Card height='small' width='small'>
-          <CardHeader pad='medium'>Header</CardHeader>
-          <CardBody pad='medium'>Body</CardBody>
-          <CardFooter pad={{ horizontal: 'small' }}>
+        <Card width='large'>
+          <CardBody align='center' background="dark-1" pad='medium'>
+      <Image src='me.png' fit='cover' width="40%" />
+            
+          </CardBody>
+          {/* <CardFooter pad={{ horizontal: 'small' }}>
             <Button icon={<Favorite color='red' />} hoverIndicator />
-            <Button icon={<ShareOption color='plain' />} hoverIndicator />
-          </CardFooter>
+          </CardFooter> */}
         </Card>
       </Box>
-      <Box pad='medium' align='center' width='50%'>
+      <Box pad='medium' align='left' width='50%'>
         <Heading margin='none'>Gaurav Agarwal</Heading>
         <Paragraph>
           Lorem Ipsum is simply dummy text of the printing and typesetting

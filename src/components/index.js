@@ -5,4 +5,5 @@ export { Skills } from './Skills';
 export { Experience } from './Experience';
 export { Recognition } from './Recognition';
 export { Certifications } from './Certifications';
+export { Footer } from './Footer';
 

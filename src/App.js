@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Main, Grommet, Footer, Text, Box } from 'grommet';
+import { Main, Grommet } from 'grommet';
 import {
   AboutMe,
   Banner,
@@ -8,6 +8,7 @@ import {
   Navigation,
   Recognition,
   Skills,
+  Footer,
 } from './components';
 import { theme } from './theme';
 import ReactGa from 'react-ga4';
@@ -49,17 +50,7 @@ const App = () => {
         {/* Certifications */}
         <Certifications />
 
-        <Footer
-          align='center'
-          // style={{ position: 'fixed', bottom: 0, width: '100%' }}
-          background={{
-            dark: '#111111',
-            light: '#FFFFFF',
-          }}
-          pad='small'
-        >
-          <Text margin={{ left: '50%' }}>Copyright</Text>
-        </Footer>
+        <Footer/>
       </Main>
     </Grommet>
   );
