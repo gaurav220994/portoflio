@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useContext } from 'react';
 
 import { Box, Diagram, Stack, Text, Heading, ResponsiveContext } from 'grommet';
-import { Code, StatusGoodSmall } from 'grommet-icons';
+import { StatusGoodSmall } from 'grommet-icons';
 
 const data = [
   {
