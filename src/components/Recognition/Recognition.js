@@ -24,30 +24,42 @@ const Recognition = ({ darkMode }) => {
   );
   return (
     <>
-      <Heading size={'xlarge'} alignSelf='center'>
+      <Heading size={'xlarge'} alignSelf='center' margin={'20px 0px 0px 0px'}>
         {'Recognition'}
       </Heading>
+      <hr width="50px"/>
       <Box
         id='recognition'
         direction='row'
         gap={size}
-        pad='40px'
+        pad='40px 20px 0px 20px'
         alignSelf='center'
-        align='stretch'
         wrap={true}
       >
-        {awards.map((el) => (
+        {awards.map((el, index) => (
           <Box
             direction='column'
             gap='medium'
+            alignContent='between'
             align='center'
-            pad={{ bottom: '10px' }}
+            key={`R_${index}`}
+            pad={{ bottom: '40px' }}
+            flex={{ grow: 1 }}
           >
-            <Heading color={{ dark: 'dark-6', light: 'dark-2' }}>
+            <Text
+              weight='bold'
+              size='large'
+              color={{ dark: 'dark-6', light: 'dark-2' }}
+            >
               {el.name}
-            </Heading>
-            <Achievement color='accent-4' size='large' />
-            <Text weight='bold'>{el.company}</Text>
+            </Text>
+            <Achievement
+              color={{ light: '#B87333', dark: 'accent-4' }}
+              size='large'
+            />
+            <Text weight='bold' color={{ light: '#B87333', dark: 'accent-4' }}>
+              {el.company}
+            </Text>
           </Box>
         ))}
       </Box>

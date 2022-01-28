@@ -1,7 +1,7 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useContext } from 'react';
 
-import { Box, Diagram, Stack, Text, Heading } from 'grommet';
-import { Code,StatusGoodSmall } from 'grommet-icons';
+import { Box, Diagram, Stack, Text, Heading, ResponsiveContext } from 'grommet';
+import { Code, StatusGoodSmall } from 'grommet-icons';
 
 const data = [
   {
@@ -9,21 +9,24 @@ const data = [
     name: 'Successive Technology',
     from: 'July 2020',
     to: 'Present',
-    designation: 'Senior Software Engineer | Blockchain | Node.js | React',
+    designation: 'Lead Technology ',
+    description: '| Node | React | Graphql | Mongo | Typescript',
   },
   {
     carat: 2,
     name: 'Zotalab',
     from: 'March 2020',
     to: 'July 2020',
-    designation: 'Senior Software Engineer | Blockchain | Node.js | React',
+    designation: 'Senior Software Engineer',
+    description: ' | Blockchain | Node.js | React | Mongo',
   },
   {
     carat: 3,
     name: 'Harbinger Group',
     from: 'January 2017',
     to: 'March 2020',
-    designation: 'Senior Software Engineer | Blockchain | Node.js | React',
+    designation: 'Senior Software Engineer',
+    description: ' | Blockchain | Node.js | React | Mongo',
   },
 ];
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
@@ -37,40 +40,48 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   ...rest,
 });
 
-const DiamondContainer = ({ from, to, designation, align, id, name }) => (
-  <Box
-    align={align || 'center'}
-    alignSelf='center'
-    direction='row'
-    gap='medium'
-    key={id}
-  >
-    <StatusGoodSmall
-      id={id}
-      size='small'
-      color={{ light: `dark-${id}`, dark: `light-${id}` }}
-    />
-    <Box align={'left'}>
-      <Text
-        size='large'
-        weight='bold'
-        color={{ dark: 'status-warning', light: 'neutral-3' }}
-      >
-        {name}
-      </Text>
-      {from && to && (
+const DiamondContainer = ({ from, to, designation, description, id, name }) => {
+  const size = useContext(ResponsiveContext);
+  return (
+    <Box
+      align={'start'}
+      alignSelf='start'
+      direction='row'
+      gap='medium'
+      key={id}
+    >
+      <StatusGoodSmall
+        id={id}
+        size='small'
+        color={{ light: `dark-${id}`, dark: `light-${id}` }}
+      />
+      <Box align={'left'}>
         <Text
-          pad='large'
-          size='small'
-          color={{ dark: 'light-4', light: 'dark-3' }}
+          size='large'
+          weight='bold'
+          color={{ dark: 'status-warning', light: 'neutral-3' }}
         >
-          {from} - {to}
+          {name}
         </Text>
-      )}
-      {designation && <Text size='small'>{designation} </Text>}
+        {from && to && (
+          <Text
+            pad='large'
+            size='small'
+            color={{ dark: 'light-4', light: 'dark-3' }}
+          >
+            {from} - {to}
+          </Text>
+        )}
+        {designation && (
+          <Text size='small'>
+            <span style={{ fontWeight: 'bold' }}>{designation} </span>
+            {size !== 'small' && <span> {description} </span>}
+          </Text>
+        )}
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const Container = ({ node, index }) => (
   <DiamondContainer
@@ -78,6 +89,7 @@ const Container = ({ node, index }) => (
     from={node.from}
     to={node.to}
     designation={node.designation}
+    description={node.description}
     id={index}
     key={node.name}
     name={node.name}
@@ -104,8 +116,11 @@ const Experience = () => {
 
   return (
     <Box align='center' pad='large' id='experience'>
-      <Heading size={'xlarge'} pad='large'>Experience</Heading>
-      <Stack>
+      <Heading size={'xlarge'} style={{ marginBottom: '0px' }}>
+        Experience
+      </Heading>
+      <hr width="50px"/>
+      <Stack style={{ marginTop: '50px' }}>
         <Box direction='column' gap='xlarge'>
           {[1, 2, 3].map((id) => (
             <Container key={id} node={data[id - 1]} index={id} />

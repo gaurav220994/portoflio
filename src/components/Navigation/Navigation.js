@@ -1,15 +1,15 @@
 import React from 'react';
 import { Box, Button, Header } from 'grommet';
 import { Home, User, Launch, Briefcase, Moon, Sun } from 'grommet-icons';
+import {Link} from 'react-scroll'
 
-import { BoxBackground } from '../../color';
 const Navigation = ({ darkMode, setDarkMode }) => {
   return (
     <Box
       align='center'
       pad='medium'
       style={{ position: 'fixed', width: '100%',zIndex:999 }}
-      background={{ ...BoxBackground }}
+      background={{dark: 'dark-1', light:'light-1'}}
     >
       <Header>
         <Button
@@ -41,7 +41,7 @@ const Navigation = ({ darkMode, setDarkMode }) => {
         />
         <Button
           secondary
-          icon={darkMode ? <Moon color={{ light: 'black', dark: 'white' }} /> : <Sun color={{ light: 'black', dark: 'white' }} />}
+          icon={darkMode ? <Sun color={{ light: 'black', dark: 'white' }} /> : <Moon color={{ light: 'black', dark: 'white' }} />}
           color={{ light: 'black', dark: 'white' }}
           onClick={() => setDarkMode(!darkMode)}
           hoverIndicator

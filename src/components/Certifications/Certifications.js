@@ -8,13 +8,13 @@ const Certifications = ({ darkMode }) => {
     cursor: pointer;
     &:hover {
       text-decoration: underline;
-      color: #FF4040;
+      color: #ff4040;
     }
   `;
   const awards = useMemo(
     () => [
       {
-        name: 'Graph Developer - Associate',
+        name: 'Graph Developer',
         url: 'https://odyssey.apollographql.com/certifications/8a7a6666-7b57-4f10-85c6-068979923705',
         company: 'Apollo',
       },
@@ -33,27 +33,30 @@ const Certifications = ({ darkMode }) => {
   );
   return (
     <>
-      <Heading size={'xlarge'} alignSelf='center'>
+      <Heading margin={{ top: '40px', bottom:'0px' }} size={'xlarge'} alignSelf='center'>
         {'Certifications'}
       </Heading>
+      <hr width="50px"/>
       <Box
         id='certification'
         direction='row'
         gap={size}
-        pad='40px'
+        margin='0px 40px 50px 40px'
         alignSelf='center'
         align='stretch'
         wrap={true}
       >
-        {awards.map((el) => (
+        {awards.map((el, index) => (
           <Box
             direction='column'
             gap='medium'
             align='center'
-            pad={{ bottom: '10px' }}
+            key={`R_${index}`}
+            pad={{ bottom: '40px' }}
+            flex={{ grow: 1 }}
           >
             <Header
-              onClick={() => window.open(el.url, "_blank")}
+              onClick={() => window.open(el.url, '_blank')}
               color={{ dark: 'accent-4', light: 'neutral-4' }}
             >
               {el.name}

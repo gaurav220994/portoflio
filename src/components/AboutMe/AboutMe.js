@@ -1,31 +1,24 @@
-import React from 'react';
-import {
-  Box,
-  Card,
-  Image,
-  CardBody,
-  CardFooter,
-  Button,
-  Heading,
-  Paragraph,
-} from 'grommet';
-import { Favorite, ShareOption } from 'grommet-icons';
+import React, { useContext } from 'react';
+import { Box, Image, Heading, Paragraph, ResponsiveContext } from 'grommet';
 
-const AboutMe = ({ darkMode, setDarkMode }) => {
+const AboutMe = () => {
+  const size = useContext(ResponsiveContext);
+
   return (
-    <Box id="aboutMe" direction='row' pad='medium'>
-      <Box pad='small' align='center' width='50%'>
-        <Card width='large'>
-          <CardBody align='center' background="dark-1" pad='medium'>
-      <Image src='me.png' fit='cover' width="40%" />
-            
-          </CardBody>
-          {/* <CardFooter pad={{ horizontal: 'small' }}>
-            <Button icon={<Favorite color='red' />} hoverIndicator />
-          </CardFooter> */}
-        </Card>
+    <Box
+      id='aboutMe'
+      direction={size === 'small' ? 'column' : 'row'}
+      pad='medium'
+    >
+      <Box pad='small' alignSelf='center' align='center' width={size === 'small' ? '100%' : '50%'}>
+        <Image src='me.png' width={'40%'} />
       </Box>
-      <Box pad='medium' align='left' width='50%'>
+      <Box
+        pad='medium'
+        alignSelf='center'
+        align='center'
+        width={size === 'small' ? '100%' : '50%'}
+      >
         <Heading margin='none'>Gaurav Agarwal</Heading>
         <Paragraph>
           Lorem Ipsum is simply dummy text of the printing and typesetting
