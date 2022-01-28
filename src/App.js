@@ -10,7 +10,7 @@ import {
   Skills,
 } from './components';
 import { theme } from './theme';
-import ReactGa from 'react-ga';
+import ReactGa from 'react-ga4';
 const App = () => {
   const val = localStorage.getItem('darkMode') === 'true';
   const [darkMode, setDarkMode] = useState(val);
@@ -20,10 +20,10 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
-  useEffect(()=>{
-    ReactGa.initialize('G-4M83CX78ZD',{ debug: true });
-    ReactGa.pageview('/')
-  },[])
+  useEffect(() => {
+    ReactGa.initialize('G-9F1ZS472FQ');
+    ReactGa.send('pageview');
+  }, []);
 
   return (
     <Grommet theme={theme} themeMode={darkMode ? 'dark' : 'light'} full>
@@ -42,13 +42,12 @@ const App = () => {
 
         {/* Recognition */}
         <Recognition />
-        
+
         {/* Experience */}
         <Experience />
 
-
         {/* Certifications */}
-        <Certifications  />
+        <Certifications />
 
         <Footer
           align='center'
