@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Header } from 'grommet';
 import { Home, User, Launch, Briefcase, Moon, Sun } from 'grommet-icons';
-import {Link} from 'react-scroll'
 
 const Navigation = ({ darkMode, setDarkMode }) => {
   return (
