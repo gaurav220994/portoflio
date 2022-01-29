@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Box, Text, Heading, ResponsiveContext } from 'grommet';
 import { Achievement } from 'grommet-icons';
 
-const Recognition = ({ darkMode }) => {
+const Recognition = ({ recognitionRef }) => {
   const size = React.useContext(ResponsiveContext);
 
   const awards = useMemo(
@@ -23,7 +23,7 @@ const Recognition = ({ darkMode }) => {
     [],
   );
   return (
-    <Box id='experience'>
+    <Box id='experience' ref={recognitionRef}>
       <Heading size={'xlarge'} alignSelf='center' margin={{top:'large', bottom: '0px'}}>
         {'Recognition'}
       </Heading>

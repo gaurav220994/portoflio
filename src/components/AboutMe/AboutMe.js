@@ -1,17 +1,23 @@
 import React from 'react';
 import { Box, Image, Text, Anchor, Heading, Paragraph } from 'grommet';
 
-const AboutMe = () => {
+const AboutMe = ({ aboutMeRef }) => {
   return (
-    <Box direction='row' pad='small' wrap={true} margin={{ top: 'large' }}>
-      <Box align='center' flex={{ grow: 1 }} style={{minWidth:'40%'}}>
+    <Box
+      ref={aboutMeRef}
+      direction='row'
+      pad='small'
+      wrap={true}
+      margin={{ top: 'large' }}
+    >
+      <Box align='center' flex={{ grow: 1 }} style={{ minWidth: '40%' }}>
         <Image src='me.png' width={'40%'} />
       </Box>
       <Box flex={{ grow: 1 }} pad='large'>
         <Heading size={'xlarge'} margin='none'>
           Hi Forks,
         </Heading>
-        <Paragraph style={{ lineHeight:'30px', maxWidth: '650px' }}>
+        <Paragraph style={{ lineHeight: '30px', maxWidth: '650px' }}>
           I'm{' '}
           <Text color='#ff0065' weight={'bold'} size='xlarge'>
             Gaurav Agarwal
@@ -48,13 +54,13 @@ const AboutMe = () => {
           alignContent='around'
           round='medium'
         >
-          <Paragraph style={{ padding:'10px', maxWidth: '800px' }}>
+          <Paragraph style={{ padding: '10px', maxWidth: '800px' }}>
             <Anchor href='/Gaurav-Agarwal-Resume.pdf' target='_blank'>
               Download my resume
             </Anchor>{' '}
             for more details. I'm unavailable at the moment, but let me know if
-            you need any help!
-          {' '}</Paragraph>
+            you need any help!{' '}
+          </Paragraph>
         </Box>
       </Box>
     </Box>

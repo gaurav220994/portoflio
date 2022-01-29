@@ -116,10 +116,14 @@ const Experience = () => {
 
   return (
     <>
-      <Heading size={'xlarge'} alignSelf='center' style={{ marginBottom: '0px' }}>
+      <Heading
+        size={'xlarge'}
+        alignSelf='center'
+        style={{ marginBottom: '0px' }}
+      >
         Experience
       </Heading>
-      <hr width='50px'/>
+      <hr width='50px' />
       <Box align='center' pad='large'>
         <Stack style={{ marginTop: '10px' }}>
           <Box direction='column' gap='xlarge'>

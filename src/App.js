@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Main, Grommet } from 'grommet';
 import {
   AboutMe,
@@ -13,6 +13,11 @@ import {
 import { theme } from './theme';
 import ReactGa from 'react-ga4';
 const App = () => {
+  const homeRef = useRef(null);
+  const aboutMeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const recognitionRef = useRef(null);
+
   const val = localStorage.getItem('darkMode') === 'true';
   const [darkMode, setDarkMode] = useState(val);
 
@@ -30,19 +35,26 @@ const App = () => {
     <Grommet theme={theme} themeMode={darkMode ? 'dark' : 'light'} full>
       <Main as='main' fill='horizontal' flex='grow' overflow='auto'>
         {/* Navigation */}
-        <Navigation darkMode={darkMode} setDarkMode={updateDarkMode} />
+        <Navigation
+          homeRef={homeRef}
+          aboutMeRef={aboutMeRef}
+          skillsRef={skillsRef}
+          recognitionRef={recognitionRef}
+          darkMode={darkMode}
+          setDarkMode={updateDarkMode}
+        />
 
         {/* Banner */}
-        <Banner />
+        <Banner homeRef={homeRef} />
 
         {/* About Me */}
-        <AboutMe />
+        <AboutMe aboutMeRef={aboutMeRef} />
 
-        {/* About Me */}
-        <Skills />
+        {/* Skills */}
+        <Skills skillsRef={skillsRef} />
 
         {/* Recognition */}
-        <Recognition />
+        <Recognition recognitionRef={recognitionRef} />
 
         {/* Experience */}
         <Experience />
@@ -50,7 +62,7 @@ const App = () => {
         {/* Certifications */}
         <Certifications />
 
-        <Footer/>
+        <Footer />
       </Main>
     </Grommet>
   );

@@ -120,11 +120,11 @@ const LabelledChartsHorizontal = () => (
     ))}
   </Box>
 );
-const Skills = () => {
+const Skills = ({skillsRef}) => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <Box id='skills'>
+    <Box ref={skillsRef}>
       <Heading
         margin={{ top: '40px', bottom: '0px' }}
         size={'xlarge'}

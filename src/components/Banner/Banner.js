@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Image } from 'grommet';
-const Banner = ({ darkMode, setDarkMode }) => {
+const Banner = ({ homeRef }) => {
   return (
-    <Box id="home" height='large'>
-      <Image fit='cover' src='code.gif' />
+    <Box ref={homeRef} height='large'>
+      <Image fit='cover' src='JavaScript.jpeg' />
     </Box>
   );
 };
