@@ -98,15 +98,25 @@ const LabelledChartHorizontal = ({ color, label, value }) => (
 
 const LabelledCharts = () => (
   <Box pad='medium' direction='column' gap='medium'>
-    {data.map(({ label, value, color }) => (
-      <LabelledChartVertical label={label} value={value} color={color} />
+    {data.map(({ label, value, color }, index) => (
+      <LabelledChartVertical
+        key={`LabelledChartVertical_${index}`}
+        label={label}
+        value={value}
+        color={color}
+      />
     ))}
   </Box>
 );
 const LabelledChartsHorizontal = () => (
   <Box pad='medium' direction='row' gap='medium'>
-    {data.map(({ label, value, color }) => (
-      <LabelledChartHorizontal label={label} value={value} color={color} />
+    {data.map(({ label, value, color }, index) => (
+      <LabelledChartHorizontal
+        key={`LabelledChartHorizontal_${index}`}
+        label={label}
+        value={value}
+        color={color}
+      />
     ))}
   </Box>
 );
@@ -125,17 +135,14 @@ const Skills = () => {
       <hr width='50px' />
       <Box
         direction='row'
-        pad="small"
+        pad='small'
         justify='around'
         align='start'
         alignContent='center'
         wrap={true}
-        margin={{top:'large'}}
+        margin={{ top: 'large' }}
       >
-        <Box
-          align='center'
-          flex={{ grow: 1 }}
-        >
+        <Box align='center' flex={{ grow: 1 }}>
           <Card background={{ light: 'light-1', dark: 'dark-1' }} pad='small'>
             <CardBody>
               {size === 'small' ? (
@@ -146,20 +153,22 @@ const Skills = () => {
             </CardBody>
           </Card>
         </Box>
-        <Box
-          width='40%'
-          flex={{ grow: 1 }}
-        >
+        <Box width='40%' flex={{ grow: 1 }}>
           <Box
             direction='row'
             justify='center'
             align='start'
             alignContent='between'
             wrap={true}
-            margin={{top:'large'}}
+            margin={{ top: 'large' }}
           >
-            {skills.map((el) => (
-              <Tag background='light-1' margin='5px' value={el} />
+            {skills.map((el, index) => (
+              <Tag
+                background='light-1'
+                key={`Tag_${index}`}
+                margin='5px'
+                value={el}
+              />
             ))}
           </Box>
         </Box>
