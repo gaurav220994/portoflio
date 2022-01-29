@@ -1,16 +1,8 @@
 import React, { useMemo } from 'react';
-import { Box, Text, Heading, ResponsiveContext } from 'grommet';
+import { Box, Text, Heading, ResponsiveContext, Anchor } from 'grommet';
 import { Certificate } from 'grommet-icons';
-import styled from 'styled-components';
-const Certifications = ({ darkMode }) => {
+const Certifications = () => {
   const size = React.useContext(ResponsiveContext);
-  const Header = styled(Heading)`
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
-      color: #ff4040;
-    }
-  `;
   const awards = useMemo(
     () => [
       {
@@ -33,10 +25,14 @@ const Certifications = ({ darkMode }) => {
   );
   return (
     <>
-      <Heading margin={{ top: '40px', bottom:'0px' }} size={'xlarge'} alignSelf='center'>
+      <Heading
+        margin={{ top: '40px', bottom: '0px' }}
+        size={'xlarge'}
+        alignSelf='center'
+      >
         {'Certifications'}
       </Heading>
-      <hr width="50px"/>
+      <hr width='50px' />
       <Box
         id='certification'
         direction='row'
@@ -55,12 +51,9 @@ const Certifications = ({ darkMode }) => {
             pad={{ bottom: '40px' }}
             flex={{ grow: 1 }}
           >
-            <Header
-              onClick={() => window.open(el.url, '_blank')}
-              color={{ dark: 'accent-4', light: 'neutral-4' }}
-            >
+            <Anchor  href={el.url} target='_blank' size='large'>
               {el.name}
-            </Header>
+            </Anchor>
             <Certificate size='large' />
             <Text weight='bold'>{el.company}</Text>
           </Box>

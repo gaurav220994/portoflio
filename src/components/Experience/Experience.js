@@ -115,7 +115,7 @@ const Experience = () => {
   }
 
   return (
-    <Box align='center' pad='large' id='experience'>
+    <Box align='center' pad='large'>
       <Heading size={'xlarge'} style={{ marginBottom: '0px' }}>
         Experience
       </Heading>

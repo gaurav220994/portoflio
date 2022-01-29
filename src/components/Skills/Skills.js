@@ -45,9 +45,9 @@ const skills = [
   'Godaddy',
   'Wordpress',
   'Microservices',
-  'DevOps',
   'Design Patterns',
   'Architecture',
+  'DevOps',
   'JQuery',
   'HTML',
   'Gromeet',
@@ -114,13 +114,28 @@ const Skills = () => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <>
-      <Heading margin={{ top: '40px', bottom:'0px' }} size={'xlarge'} alignSelf='center'>
+    <Box id='skills'>
+      <Heading
+        margin={{ top: '40px', bottom: '0px' }}
+        size={'xlarge'}
+        alignSelf='center'
+      >
         Skills
       </Heading>
-      <hr width="50px"/>
-      <Box id='skills' direction='row' pad='30px' gap='medium' wrap={true}>
-        <Box align='end'>
+      <hr width='50px' />
+      <Box
+        direction='row'
+        pad="small"
+        justify='around'
+        align='start'
+        alignContent='center'
+        wrap={true}
+        margin={{top:'large'}}
+      >
+        <Box
+          align='center'
+          flex={{ grow: 1 }}
+        >
           <Card background={{ light: 'light-1', dark: 'dark-1' }} pad='small'>
             <CardBody>
               {size === 'small' ? (
@@ -131,16 +146,17 @@ const Skills = () => {
             </CardBody>
           </Card>
         </Box>
-        <Box width='40%'>
+        <Box
+          width='40%'
+          flex={{ grow: 1 }}
+        >
           <Box
             direction='row'
-            alignSelf='center'
-            align='center'
-            gap='small'
-            width='100%'
-            margin={'large'}
-            style={{ flexGrow: size === 'small' ? 1 : 0 }}
+            justify='center'
+            align='start'
+            alignContent='between'
             wrap={true}
+            margin={{top:'large'}}
           >
             {skills.map((el) => (
               <Tag background='light-1' margin='5px' value={el} />
@@ -148,7 +164,7 @@ const Skills = () => {
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

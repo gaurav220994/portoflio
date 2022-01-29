@@ -23,13 +23,12 @@ const Recognition = ({ darkMode }) => {
     [],
   );
   return (
-    <>
-      <Heading size={'xlarge'} alignSelf='center' margin={'20px 0px 0px 0px'}>
+    <Box id='experience'>
+      <Heading size={'xlarge'} alignSelf='center' margin={{top:'large'}}>
         {'Recognition'}
       </Heading>
       <hr width="50px"/>
       <Box
-        id='recognition'
         direction='row'
         gap={size}
         pad='40px 20px 0px 20px'
@@ -63,7 +62,7 @@ const Recognition = ({ darkMode }) => {
           </Box>
         ))}
       </Box>
-    </>
+    </Box>
   );
 };
 
