@@ -11,7 +11,7 @@ const AboutMe = () => {
         <Heading size={'xlarge'} margin='none'>
           Hi Forks,
         </Heading>
-        <Paragraph style={{ maxWidth: '650px' }}>
+        <Paragraph style={{ lineHeight:'30px', maxWidth: '650px' }}>
           I'm{' '}
           <Text color='#ff0065' weight={'bold'} size='xlarge'>
             Gaurav Agarwal

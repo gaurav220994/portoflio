@@ -115,23 +115,26 @@ const Experience = () => {
   }
 
   return (
-    <Box align='center' pad='large'>
-      <Heading size={'xlarge'} style={{ marginBottom: '0px' }}>
+    <>
+      <Heading size={'xlarge'} alignSelf='center' style={{ marginBottom: '0px' }}>
         Experience
       </Heading>
-      <hr width="50px"/>
-      <Stack style={{ marginTop: '50px' }}>
-        <Box direction='column' gap='xlarge'>
-          {[1, 2, 3].map((id) => (
-            <Container key={id} node={data[id - 1]} index={id} />
-          ))}
-        </Box>
-        <Diagram
-          animation={{ type: 'draw', duration: 3000, size: 'small' }}
-          connections={connections}
-        />
-      </Stack>
-    </Box>
+      <hr width='50px'/>
+      <Box align='center' pad='large'>
+        {/* <hr width="50px"/> */}
+        <Stack style={{ marginTop: '50px' }}>
+          <Box direction='column' gap='xlarge'>
+            {[1, 2, 3].map((id) => (
+              <Container key={id} node={data[id - 1]} index={id} />
+            ))}
+          </Box>
+          <Diagram
+            animation={{ type: 'draw', duration: 3000, size: 'small' }}
+            connections={connections}
+          />
+        </Stack>
+      </Box>
+    </>
   );
 };
 export { Experience };
