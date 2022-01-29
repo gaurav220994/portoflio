@@ -37,7 +37,7 @@ const Certifications = () => {
         id='certification'
         direction='row'
         gap={size}
-        margin='0px 40px 50px 40px'
+        margin='40px 40px 50px 40px'
         alignSelf='center'
         align='stretch'
         wrap={true}

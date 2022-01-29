@@ -121,8 +121,7 @@ const Experience = () => {
       </Heading>
       <hr width='50px'/>
       <Box align='center' pad='large'>
-        {/* <hr width="50px"/> */}
-        <Stack style={{ marginTop: '50px' }}>
+        <Stack style={{ marginTop: '10px' }}>
           <Box direction='column' gap='xlarge'>
             {[1, 2, 3].map((id) => (
               <Container key={id} node={data[id - 1]} index={id} />

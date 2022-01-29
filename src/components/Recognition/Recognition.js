@@ -24,7 +24,7 @@ const Recognition = ({ darkMode }) => {
   );
   return (
     <Box id='experience'>
-      <Heading size={'xlarge'} alignSelf='center' margin={{top:'large'}}>
+      <Heading size={'xlarge'} alignSelf='center' margin={{top:'large', bottom: '0px'}}>
         {'Recognition'}
       </Heading>
       <hr width="50px"/>
