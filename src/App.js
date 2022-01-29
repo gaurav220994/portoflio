@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import moment from 'moment';
 import { Main, Grommet } from 'grommet';
 import {
   AboutMe,
@@ -18,7 +19,26 @@ const App = () => {
   const skillsRef = useRef(null);
   const recognitionRef = useRef(null);
 
-  const val = localStorage.getItem('darkMode') === 'true';
+  const checkDayTime = () => {
+    var format = 'hh:mm:ss';
+    // var time = moment() gives you current time. no format required.
+    var time = moment(),
+      eveningTime = moment('18:00:00', format),
+      morningTime = moment('06:00:00', format);
+
+    if (time.isBetween(eveningTime, morningTime)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  let val = false;
+  const local = localStorage.getItem('darkMode');
+  if (local === undefined || local === null) {
+    val = !checkDayTime();
+  } else {
+    val = local === "true";
+  }
   const [darkMode, setDarkMode] = useState(val);
 
   const updateDarkMode = () => {
