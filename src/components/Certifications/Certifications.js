@@ -51,7 +51,7 @@ const Certifications = () => {
             pad={{ bottom: '40px' }}
             flex={{ grow: 1 }}
           >
-            <Anchor  href={el.url} target='_blank' size='large'>
+            <Anchor color={{ dark: 'accent-4', light: 'neutral-4' }} href={el.url} target='_blank' size='large'>
               {el.name}
             </Anchor>
             <Certificate size='large' />
