@@ -11,9 +11,11 @@ const AboutMe = ({ aboutMeRef }) => {
       margin={{ top: 'large' }}
     >
       <Box align='center' flex={{ grow: 1 }} style={{ minWidth: '40%' }}>
-        <Image src='me.png' width={'40%'} />
+        <Image src='MEPIC.png' 
+        width={'60%'} 
+        />
       </Box>
-      <Box flex={{ grow: 1 }} pad='large'>
+      <Box flex={{ grow: 1 }} pad='medium'>
         <Heading size={'xlarge'} margin='none'>
           Hi Forks,
         </Heading>

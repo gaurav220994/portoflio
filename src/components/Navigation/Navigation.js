@@ -16,7 +16,7 @@ const Navigation = ({
   return (
     <Box
       align='center'
-      pad='medium'
+      pad='small'
       style={{ position: 'fixed', width: '100%', zIndex: 999 }}
       background={{ dark: 'dark-1', light: 'light-1' }}
     >
