@@ -35,7 +35,7 @@ const AboutMe = ({ aboutMeRef }) => {
           </Anchor>
           .<br />
           I'm a fullstack MERN developer along with leadership and mentoring
-          quality, working on a broader set of technology including front-end &
+          quality, working on a broader set of technologies including front-end &
           back-end.
           <br />
           I enjoy accepting challenges, b'coz challenges are what makes life
