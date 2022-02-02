@@ -1,6 +1,6 @@
-import React, { useReducer, useEffect, useContext } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
-import { Box, Diagram, Stack, Text, Heading, ResponsiveContext } from 'grommet';
+import { Box, Diagram, Stack, Text, Heading } from 'grommet';
 import { StatusGoodSmall } from 'grommet-icons';
 
 const data = [
@@ -9,8 +9,8 @@ const data = [
     name: 'Successive Technology',
     from: 'July 2020',
     to: 'Present',
-    designation: 'Lead Technology ',
-    description: '| Node | React | Graphql | Mongo | Typescript',
+    designation: 'Lead Technology',
+    description: 'Node | React | Graphql | Mongo | Typescript',
   },
   {
     carat: 2,
@@ -18,7 +18,7 @@ const data = [
     from: 'March 2020',
     to: 'July 2020',
     designation: 'Senior Software Engineer',
-    description: ' | Blockchain | Node.js | React | Mongo',
+    description: 'Blockchain | Node.js | React | Mongo',
   },
   {
     carat: 3,
@@ -26,7 +26,7 @@ const data = [
     from: 'January 2017',
     to: 'March 2020',
     designation: 'Senior Software Engineer',
-    description: ' | Blockchain | Node.js | React | Mongo',
+    description: 'Blockchain | Node.js | React | Mongo',
   },
 ];
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
@@ -41,7 +41,6 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
 });
 
 const DiamondContainer = ({ from, to, designation, description, id, name }) => {
-  const size = useContext(ResponsiveContext);
   return (
     <Box
       align={'start'}
@@ -63,21 +62,20 @@ const DiamondContainer = ({ from, to, designation, description, id, name }) => {
         >
           {name}
         </Text>
-        {from && to && (
-          <Text
-            pad='large'
-            size='small'
-            color={{ dark: 'light-4', light: 'dark-3' }}
-          >
-            {from} - {to}
-          </Text>
-        )}
-        {designation && (
-          <Text size='small'>
-            <span style={{ fontWeight: 'bold' }}>{designation} </span>
-            {size !== 'small' && <span> {description} </span>}
-          </Text>
-        )}
+        <Text
+          pad='large'
+          size='small'
+          color={{ dark: 'light-4', light: 'dark-3' }}
+        >
+          {from} - {to}
+        </Text>
+        <Text size='small'>
+          <span style={{ fontWeight: 'bold' }}>
+            {designation}
+            {' | '}
+            {description}
+          </span>
+        </Text>
       </Box>
     </Box>
   );
