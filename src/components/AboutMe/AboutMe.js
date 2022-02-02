@@ -11,9 +11,7 @@ const AboutMe = ({ aboutMeRef }) => {
       margin={{ top: 'large' }}
     >
       <Box align='center' flex={{ grow: 1 }} style={{ minWidth: '40%' }}>
-        <Image src='MEPIC.png' 
-        width={'60%'} 
-        />
+        <Image src='MEPIC.png' width={'60%'} />
       </Box>
       <Box flex={{ grow: 1 }} pad='medium'>
         <Heading size={'xlarge'} margin='none'>
@@ -35,8 +33,8 @@ const AboutMe = ({ aboutMeRef }) => {
           </Anchor>
           .<br />
           I'm a fullstack MERN developer along with leadership and mentoring
-          quality, working on a broader set of technologies including front-end &
-          back-end.
+          quality, working on a broader set of technologies including front-end
+          & back-end.
           <br />
           I enjoy accepting challenges, b'coz challenges are what makes life
           interesting. Overcoming them is what makes life meaningful.
@@ -57,7 +55,10 @@ const AboutMe = ({ aboutMeRef }) => {
           round='medium'
         >
           <Paragraph style={{ padding: '10px', maxWidth: '800px' }}>
-            <Anchor href='/Gaurav-Agarwal-Resume.pdf' target='_blank'>
+            <Anchor
+              href='/Gaurav-Agarwal-Resume.pdf'
+              target='_blank'
+            >
               Download my resume
             </Anchor>{' '}
             for more details. I'm unavailable at the moment, but let me know if

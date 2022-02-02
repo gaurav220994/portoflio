@@ -9,10 +9,12 @@ const Navigation = ({
   aboutMeRef,
   skillsRef,
   recognitionRef,
+  raiseEvent,
 }) => {
   const scroll = (ref) => {
     ref.current.scrollIntoView(true);
   };
+
   return (
     <Box
       align='center'
@@ -23,27 +25,39 @@ const Navigation = ({
       <Header>
         <Button
           secondary
-          onClick={() => scroll(homeRef)}
+          onClick={() => {
+            raiseEvent('Home', 'Home', 'Home');
+            scroll(homeRef);
+          }}
           icon={<Home color={{ light: 'black', dark: 'white' }} />}
           color={{ light: 'black', dark: 'white' }}
           hoverIndicator
         />
         <Button
           secondary
-          onClick={() => scroll(aboutMeRef)}
+          onClick={() => {
+            raiseEvent('AboutMe', 'AboutMe', 'AboutMe');
+            scroll(aboutMeRef);
+          }}
           icon={<User color={{ light: 'black', dark: 'white' }} />}
           color={{ light: 'black', dark: 'white' }}
           hoverIndicator
         />
         <Button
           secondary
-          onClick={() => scroll(skillsRef)}
+          onClick={() => {
+            raiseEvent('Skills', 'Skills', 'Skills');
+            scroll(skillsRef);
+          }}
           icon={<Launch color={{ light: 'black', dark: 'white' }} />}
           hoverIndicator
         />
         <Button
           secondary
-          onClick={() => scroll(recognitionRef)}
+          onClick={() => {
+            raiseEvent('Experience', 'Experience', 'Experience');
+            scroll(recognitionRef);
+          }}
           icon={<Briefcase color={{ light: 'black', dark: 'white' }} />}
           color={{ light: 'black', dark: 'white' }}
           hoverIndicator
@@ -58,7 +72,10 @@ const Navigation = ({
             )
           }
           color={{ light: 'black', dark: 'white' }}
-          onClick={() => setDarkMode(!darkMode)}
+          onClick={() => {
+            raiseEvent('DarkMode', 'DarkMode', `DarkMode: ${darkMode}`);
+            setDarkMode(!darkMode);
+          }}
           hoverIndicator
         />
       </Header>

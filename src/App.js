@@ -18,7 +18,13 @@ const App = () => {
   const aboutMeRef = useRef(null);
   const skillsRef = useRef(null);
   const recognitionRef = useRef(null);
-
+  const raiseEvent = (category, action, label) => {
+    ReactGa.event({
+      category,
+      action,
+      label,
+    });
+  };
   const checkDayTime = () => {
     var format = 'hh:mm:ss';
     // var time = moment() gives you current time. no format required.
@@ -37,7 +43,7 @@ const App = () => {
   if (local === undefined || local === null) {
     val = !checkDayTime();
   } else {
-    val = local === "true";
+    val = local === 'true';
   }
   const [darkMode, setDarkMode] = useState(val);
 
@@ -62,13 +68,14 @@ const App = () => {
           recognitionRef={recognitionRef}
           darkMode={darkMode}
           setDarkMode={updateDarkMode}
+          raiseEvent={raiseEvent}
         />
 
         {/* Banner */}
         <Banner homeRef={homeRef} />
 
         {/* About Me */}
-        <AboutMe aboutMeRef={aboutMeRef} />
+        <AboutMe raiseEvent={raiseEvent} aboutMeRef={aboutMeRef} />
 
         {/* Skills */}
         <Skills skillsRef={skillsRef} />
@@ -82,7 +89,7 @@ const App = () => {
         {/* Certifications */}
         <Certifications />
 
-        <Footer />
+        <Footer raiseEvent={raiseEvent} />
       </Main>
     </Grommet>
   );
