@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Image, Text, ResponsiveContext } from 'grommet';
+import { Box, Image, ResponsiveContext } from 'grommet';
 const Banner = ({ homeRef }) => {
   const size = useContext(ResponsiveContext);
   return (
