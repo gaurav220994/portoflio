@@ -10,7 +10,7 @@ const data = [
     from: 'July 2020',
     to: 'Present',
     designation: 'Lead Technology',
-    description: 'Node | React | Graphql | Mongo | Typescript',
+    description: 'Node | React | GraphQL | Mongo | Typescript',
   },
   {
     carat: 2,
