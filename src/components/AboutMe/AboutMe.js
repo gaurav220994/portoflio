@@ -43,8 +43,8 @@ const AboutMe = ({ aboutMeRef }) => {
           write elegant, efficient code and fortune to work on cutting edge
           technology.
           <br />
-          Music, travelling, trekking, clubbing and clicking photos is what I'm
-          enthusiastic.
+          Music, travelling, trekking, clubbing and photography is what I'm
+          enthusiastic about.
         </Paragraph>
         <Box
           background={{ light: 'light-1', dark: 'dark-1' }}

@@ -3,25 +3,22 @@ import { Box, Image, ResponsiveContext } from 'grommet';
 const Banner = ({ homeRef }) => {
   const size = useContext(ResponsiveContext);
   return (
-    <Box background={{ light: 'light-1', dark: 'dark-1' }}>
+    <Box margin={{ top: '50px' }}>
       <Box
         ref={homeRef}
-        height='large'
+        height='medium'
         width='100%'
-        background='url(JS.png)'
-        // direction='row'
         align='center'
         justify='center'
       >
-        <Box
-          pad={{ left: size, right: size }}
-        >
+        <Box pad={{ left: size, right: size }}>
           <Image
-          width={['small'].includes(size) ? '100%' : '60%'}
-          alignSelf='center'
-          fit='cover' src='Asset15x2x.png' />
+            width={['small'].includes(size) ? '100%' : '100%'}
+            alignSelf='center'
+            fit='cover'
+            src='name.png'
+          />
         </Box>
-        {/* <Image fit='cover' src='JavaScript.jpeg' /> */}
       </Box>
     </Box>
   );
