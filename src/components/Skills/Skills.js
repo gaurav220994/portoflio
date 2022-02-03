@@ -15,7 +15,7 @@ const data = [
   { label: 'NodeJS', value: 50, color: 'accent-1' },
   { label: 'React', value: 40, color: 'accent-2' },
   { label: 'Mongo', value: 40, color: 'accent-3' },
-  { label: 'GrapQL', value: 40, color: 'accent-4' },
+  { label: 'GraphQL', value: 40, color: 'accent-4' },
   { label: 'Typescript', value: 35, color: 'neutral-1' },
   { label: 'Express', value: 40, color: 'neutral-3' },
 ];
