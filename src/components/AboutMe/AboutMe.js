@@ -15,7 +15,7 @@ const AboutMe = ({ aboutMeRef }) => {
       </Box>
       <Box flex={{ grow: 1 }} pad='medium'>
         <Heading size={'xlarge'} margin='none'>
-          Hi Forks,
+          Hi Folks,
         </Heading>
         <Paragraph style={{ lineHeight: '30px', maxWidth: '650px' }}>
           I'm{' '}
