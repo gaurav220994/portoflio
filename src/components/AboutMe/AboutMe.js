@@ -56,13 +56,12 @@ const AboutMe = ({ aboutMeRef }) => {
         >
           <Paragraph style={{ padding: '10px', maxWidth: '800px' }}>
             <Anchor
-              href='/Gaurav-Agarwal-Resume.pdf'
+              href='https://gaurav220994.github.io/portoflio/Gaurav-Agarwal-Resume.pdf'
               target='_blank'
             >
               Download my resume
             </Anchor>{' '}
-            for more details. I'm unavailable at the moment, but let me know if
-            you need any help!{' '}
+            for more details.
           </Paragraph>
         </Box>
       </Box>
