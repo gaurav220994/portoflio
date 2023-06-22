@@ -56,7 +56,7 @@ const AboutMe = ({ aboutMeRef }) => {
         >
           <Paragraph style={{ padding: '10px', maxWidth: '800px' }}>
             <Anchor
-              href='https://gaurav220994.github.io/portoflio/Gaurav-Agarwal-Resume.pdf'
+              href='https://gaurav220994.github.io/portfolio/Gaurav-Agarwal-Resume.pdf'
               target='_blank'
             >
               Download my resume
