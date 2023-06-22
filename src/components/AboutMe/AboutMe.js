@@ -22,7 +22,7 @@ const AboutMe = ({ aboutMeRef }) => {
           <Text color='#ff0065' weight={'bold'} size='xlarge'>
             Gaurav Agarwal
           </Text>{' '}
-          - Technical Lead, having more than 5 years of experience in IT
+          - Technical Lead, having more than 7 years of experience in IT
           industry, currently engaged with{' '}
           <Anchor href='https://successive.tech' target='_blank'>
             Successive Technology
