@@ -22,4 +22,8 @@ jobs:
       - name: npm install
         run: |
           npm install
-          npm deploy
+      ## Install npm and Build Dist
+      - name: npm deploy
+        run: |
+          npm install
+          npm run deploy
