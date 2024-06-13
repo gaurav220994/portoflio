@@ -8,6 +8,14 @@ const Recognition = ({ recognitionRef }) => {
   const awards = useMemo(
     () => [
       {
+        name: 'Going Above & Beyond Award',
+        company: 'Successive Technology',
+      },
+      {
+        name: 'Growth Award',
+        company: 'Successive Technology',
+      },
+      {
         name: '3 Cheers Award',
         company: 'Successive Technology',
       },

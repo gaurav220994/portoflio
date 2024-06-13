@@ -16,7 +16,7 @@ const Banner = ({ homeRef }) => {
             width={['small'].includes(size) ? '100%' : '100%'}
             alignSelf='center'
             fit='cover'
-            src='name.png'
+            src='portfolio/name.png'
           />
         </Box>
       </Box>

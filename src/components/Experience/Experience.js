@@ -6,27 +6,35 @@ import { StatusGoodSmall } from 'grommet-icons';
 const data = [
   {
     carat: 1,
+    name: 'Pattern®',
+    from: 'May 2024',
+    to: 'Present',
+    designation: 'Engineer',
+    description: 'Node | React | ReThink DB | Typescript | AWS',
+  },
+  {
+    carat: 2,
     name: 'Successive Technology',
     from: 'July 2020',
-    to: 'Present',
+    to: 'May 2024',
     designation: 'Lead Technology',
     description: 'Node | React | GraphQL | Mongo | Typescript',
   },
   {
-    carat: 2,
+    carat: 3,
     name: 'Zotalab',
     from: 'March 2020',
     to: 'July 2020',
     designation: 'Senior Software Engineer',
-    description: 'Blockchain | Node.js | React | Mongo',
+    description: 'Blockchain | Node | React | Mongo',
   },
   {
-    carat: 3,
+    carat: 4,
     name: 'Harbinger Group',
     from: 'January 2017',
     to: 'March 2020',
     designation: 'Senior Software Engineer',
-    description: 'Blockchain | Node.js | React | Mongo',
+    description: 'Blockchain | Node | React | Mongo',
   },
 ];
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
@@ -108,6 +116,7 @@ const Experience = () => {
   const connections = [];
 
   if (draw) {
+    connections.push(connection('4', '3', { anchor: 'vertical' }));
     connections.push(connection('3', '2', { anchor: 'vertical' }));
     connections.push(connection('2', '1', { anchor: 'vertical' }));
   }
@@ -125,8 +134,8 @@ const Experience = () => {
       <Box align='center' pad='large'>
         <Stack style={{ marginTop: '10px' }}>
           <Box direction='column' gap='xlarge'>
-            {[1, 2, 3].map((id) => (
-              <Container key={id} node={data[id - 1]} index={id} />
+            {data.map((el, index) => (
+              <Container key={index} node={el} index={index+1} />
             ))}
           </Box>
           <Diagram

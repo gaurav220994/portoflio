@@ -11,7 +11,7 @@ const AboutMe = ({ aboutMeRef }) => {
       margin={{ top: 'large' }}
     >
       <Box align='center' flex={{ grow: 1 }} style={{ minWidth: '40%' }}>
-        <Image src='MEPIC.png' width={'60%'} />
+        <Image src='portfolio/MEPIC.png' width={'60%'} />
       </Box>
       <Box flex={{ grow: 1 }} pad='medium'>
         <Heading size={'xlarge'} margin='none'>
@@ -22,15 +22,10 @@ const AboutMe = ({ aboutMeRef }) => {
           <Text color='#ff0065' weight={'bold'} size='xlarge'>
             Gaurav Agarwal
           </Text>{' '}
-          - Technical Lead, having more than 7 years of experience in IT
+          - Engineer, having more than 7 years of experience in IT
           industry, currently engaged with{' '}
-          <Anchor href='https://successive.tech' target='_blank'>
-            Successive Technology
-          </Anchor>{' '}
-          aka{' '}
-          <Anchor href='https://nodexperts.com' target='_blank'>
-            NodeXperts
-          </Anchor>
+          <Anchor href='https://pattern.com' target='_blank'>
+            Pattern®</Anchor>
           .<br />
           I'm a fullstack MERN developer along with leadership and mentoring
           quality, working on a broader set of technologies including front-end
