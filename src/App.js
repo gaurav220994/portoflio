@@ -25,6 +25,7 @@ const App = () => {
       label,
     });
   };
+
   const checkDayTime = () => {
     var format = 'hh:mm:ss';
     // var time = moment() gives you current time. no format required.
