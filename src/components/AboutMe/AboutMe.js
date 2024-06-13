@@ -11,7 +11,7 @@ const AboutMe = ({ aboutMeRef }) => {
       margin={{ top: 'large' }}
     >
       <Box align='center' flex={{ grow: 1 }} style={{ minWidth: '40%' }}>
-        <Image src='portfolio/MEPIC.png' width={'60%'} />
+        <Image src={process.env.PUBLIC_URL + '/MEPIC.png'} width={'60%'} />
       </Box>
       <Box flex={{ grow: 1 }} pad='medium'>
         <Heading size={'xlarge'} margin='none'>
