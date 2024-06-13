@@ -1,4 +1,4 @@
-name:  "Deploy the portfolio"
+name: "Deploy the portfolio"
 on:
   push:
     branches: [develop]
@@ -9,8 +9,8 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: '18.x'
-
+      NODE_VERSION: "18.x"
+    steps:
       ## Checkout Repo
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.NODE_VERSION }}
