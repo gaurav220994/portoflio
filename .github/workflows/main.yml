@@ -1,0 +1,25 @@
+name:  "Deploy the portfolio"
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+jobs:
+  deploy_source:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: '18.x'
+
+      ## Checkout Repo
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      ## Install npm and Build Dist
+      - name: npm install
+        run: |
+          npm install
+          npm deploy
